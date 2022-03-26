@@ -1,0 +1,20 @@
+Config { font = "xft:Cousine Nerd Font Mono:pixelsize=10"
+        , borderColor = "black"
+        , border = TopB
+        , bgColor = "1d1f21"
+        , fgColor = "grey"
+        , position = TopW L 100
+	,allDesktops = True
+        , commands = [ Run Weather "CYVR" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+                        , Run Wireless "wlp5s0" ["-t","<essid>"] 10
+                        , Run Network "enp0s31f6" ["-L","0","-H","32","--normal","green","--high","red"]  10
+			, Run Battery ["-t","Bat: <left>%"] 10
+                        --, Run Battery ["--", "-c", "energy_full"] 30
+                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                        , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        , Run Date "%a %b %d %Y %H:%M" "date" 10
+                        , Run UnsafeStdinReader
+]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template =  "%UnsafeStdinReader%}{ %cpu% | W: <fc=#00FF00>%wlp5s0wi%</fc> | %enp0s31f6% | %battery% | %memory% | %date%            "}
