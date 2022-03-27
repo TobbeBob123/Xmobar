@@ -1,4 +1,4 @@
-Config { font = "xft:Cousine Nerd Font Mono:pixelsize=10"
+Config { font = "xft:Cousine Nerd Font Mono:size=8:bold"
         , borderColor = "black"
         , border = TopB
         , bgColor = "1d1f21"
@@ -12,10 +12,11 @@ Config { font = "xft:Cousine Nerd Font Mono:pixelsize=10"
                         --, Run Battery ["--", "-c", "energy_full"] 30
                         , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
-                        , Run Date "%a %b %d %Y | %H:%M |" "date" 10
+                        , Run Date "%a %b %d %Y" "date1" 10
+                        , Run Date "%H:%M" "date2" 10
                         , Run Volume "default" "Master" [] 10
                         , Run UnsafeStdinReader
 ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template =  "%UnsafeStdinReader%}{ %cpu% | W: <fc=#00FF00>%wlp5s0wi%</fc> | %enp0s31f6% | %battery% | %default:Master% | %memory% | %date%          "}
+        , template =  "%UnsafeStdinReader%}{ <box type=Bottom width=2 mb=2 color=#ecbe7b><fc=#ecbe7b><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#ff6c6b><fc=#ff6c6b><action=`alacritty -e htop`>W: %wlp5s0wi%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#a9alel><fc=#a9alel><action=`alacritty -e htop`>%enp0s31f6%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#98be65><fc=#98be65><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#c678dd><fc=#c678dd><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#da8548><fc=#da8548><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#46d9ff><fc=#46d9ff><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#FFFFFF><fc=#FFFFFF><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |         "}
