@@ -1,8 +1,8 @@
 Config { font = "xft:Cousine Nerd Font Mono:size=10:bold"
-        , borderColor = "black"
+        , borderColor = "#282a36"
         , border = BottomB
-        , bgColor = "1d1f21"
-        , fgColor ="gray"
+        , bgColor = "#282a36"
+        , fgColor ="#ff79c6"
         , position = TopW L 100
 	, allDesktops = True
         , commands = [    Run Wireless "wlo1" ["-t","<essid>"] 10
@@ -30,4 +30,4 @@ Config { font = "xft:Cousine Nerd Font Mono:size=10:bold"
 ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template =  "%StdinReader% }{ <box type=Bottom width=2 mb=2 color=#ecbe7b><fc=#ecbe7b><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#ff6c6b><fc=#ff6c6b><action=`alacritty -e htop`>W: %wlo1wi%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#98be65><fc=#98be65><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#c678dd><fc=#c678dd><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#da8548><fc=#da8548><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#46d9ff><fc=#46d9ff><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#FFFFFF><fc=#FFFFFF><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |       "}
+        , template =  " %StdinReader% }{ <box type=Bottom width=2 mb=2 color=#ecbe7b><fc=#ecbe7b><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#ff6c6b><fc=#ff6c6b><action=`alacritty -e htop`>W: %wlo1wi%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#98be65><fc=#98be65><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#c678dd><fc=#c678dd><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#da8548><fc=#da8548><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#46d9ff><fc=#46d9ff><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#FFFFFF><fc=#FFFFFF><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |       "}
