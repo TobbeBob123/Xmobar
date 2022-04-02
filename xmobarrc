@@ -21,7 +21,7 @@ Config { font = "xft:Cousine Nerd Font Mono:size=10:bold"
                                        -- charged status
                                        , "-i"	, "<fc=#50fa7b>Charged</fc>"
                              ] 50
-                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                        , Run Cpu ["-L","3","-H","50","--normal","#50fa7b","--high","#ff5555"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Date "%a %b %d %Y" "date1" 10
                         , Run Date "%H:%M" "date2" 10
