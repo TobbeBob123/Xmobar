@@ -1,10 +1,11 @@
-Config { font = "xft:Cousine Nerd Font Mono:size=10:bold"
-        , borderColor = "#282a36"
-        , border = BottomB
+Config { font = "xft:Cousine Nerd Font Mono:pixelsize=12:bold:antialias=true:hinting=true:"
         , bgColor = "#282a36"
         , fgColor ="#ff79c6"
-        , position = TopW L 100
+        , position = TopSize L 100 26
+        , lowerOnStart = True
+        , hideOnStart = False 
 	, allDesktops = True
+        , persistent = True
         , commands = [    Run Wireless "wlo1" ["-t","<essid>"] 10
 			, Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
                              , "--Low"      , "10"        -- units: %
@@ -30,4 +31,4 @@ Config { font = "xft:Cousine Nerd Font Mono:size=10:bold"
 ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template =  " %StdinReader% }{ <box type=Bottom width=2 mb=2 color=#ffb86c><fc=#ffb86c><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#ff5555><fc=#ff5555><action=`alacritty -e htop`>W: %wlo1wi%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#ff79c6><fc=#ff79c6><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#bd93f9><fc=#bd93f9><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#ffb86c><fc=#ffb86c><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#8be9fd><fc=#8be9fd><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=2 mb=2 color=#f8f8f2><fc=#f8f8f2><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |       "}
+        , template =  " %StdinReader% }{ <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box  type=Bottom width=0 mb=0 color=#282a36><fc=#ff5555><action=`alacritty -e htop`>W: %wlo1wi%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ff79c6><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |        "}
