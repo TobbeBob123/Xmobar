@@ -1,4 +1,4 @@
-Config { font = "xft:Cousine Nerd Font Mono:pixelsize=12:bold:antialias=true:hinting=true:"
+Config { font = "xft:Cousine Nerd Font Mono:pixelsize=10:bold:antialias=true:hinting=true:"
         , bgColor = "#282a36"
         , fgColor ="#ff79c6"
         , position = TopSize L 100 26
@@ -6,7 +6,7 @@ Config { font = "xft:Cousine Nerd Font Mono:pixelsize=12:bold:antialias=true:hin
         , hideOnStart = False 
 	, allDesktops = True
         , persistent = True
-        , commands = [    Run Wireless "wlo1" ["-t","<essid>"] 10
+        , commands = [    Run Wireless "wlp5s0" ["-t","<essid>"] 10
 			, Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
@@ -31,4 +31,4 @@ Config { font = "xft:Cousine Nerd Font Mono:pixelsize=12:bold:antialias=true:hin
 ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template =  " %StdinReader% }{ <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box  type=Bottom width=0 mb=0 color=#282a36><fc=#ff5555><action=`alacritty -e htop`>W: %wlo1wi%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ff79c6><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |        "}
+        , template =  " %StdinReader% }{ <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`alacritty -e htop`>%cpu%</action></fc></box> | <box  type=Bottom width=0 mb=0 color=#282a36><fc=#ff5555><action=`alacritty -e htop`>W: %wlp5s0wi%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ff79c6><action=`alacritty -e htop`>%battery%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`alacritty -e htop`>%default:Master%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`alacritty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd><action=`alacritty -e htop`>D: %date1%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2><action=`alacritty -e htop`>KL: %date2%</action></fc></box> |               "}
