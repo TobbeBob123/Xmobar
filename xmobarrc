@@ -1,4 +1,4 @@
-Config { font = "xft:Cousine Nerd Font Mono:pixelsize=9:bold:antialias=true:hinting=true:"
+Config { font = "xft:Source Code Pro:pixelsize=9:bold:antialias=true:hinting=true:"
         , bgColor = "#282a36"
         , fgColor ="#44475a"
         , position = TopSize L 98 26
@@ -11,24 +11,24 @@ Config { font = "xft:Cousine Nerd Font Mono:pixelsize=9:bold:antialias=true:hint
 			, Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "#ff5555"
-                             , "--normal"   , "#ffb86c"
-                             , "--high"     , "#50fa7b"
+                             , "--low"      , "#ff76c6"
+                             , "--normal"   , "#ff79c6"
+                             , "--high"     , "#ff79c6"
 
                              , "--" -- battery specific options
                                        -- discharging status
                                        , "-o"	, "<timeleft>"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#ffb86c>Charging</fc>"
+                                       , "-O"	, "<fc=#ff76c6>Charging</fc>"
                                        -- charged status
-                                       , "-i"	, "<fc=#50fa7b>Charged</fc>"
+                                       , "-i"	, "<fc=#ff76c6>Charged</fc>"
                              ] 50
-                        , Run Cpu ["-L","3","-H","50","--normal","#50fa7b","--high","#ff5555"] 10
+                        , Run Cpu ["-L","3","-H","50","--normal","#ffb86c","--high","#ffb86c"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Date "%a %b %d %Y" "date1" 10
                         , Run Date "%H:%M" "date2" 10
                         , Run Com  "uname" ["-r"] "kernel" 3600
-                        , Run Volume "default" "Master" [] 10
+                        , Run Volume "default" "Master" [] 5
                         , Run UnsafeStdinReader
                         , Run Brightness [ "-t", "L: <percent>%", "--", "-D", "intel_backlight" ] 10
 ]
