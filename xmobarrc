@@ -1,4 +1,4 @@
-Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=true:"
+Config { font = "xft:Source Code Pro Black:pixelsize=8:bold:antialias=true:hinting=true:"
         , bgColor = "#282a36"
         , fgColor ="#44475a"
         , position = TopSize L 98 26
