@@ -27,7 +27,7 @@ Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=tru
                         , Run Date "%a %b %d %Y" "date1" 10
                         , Run Date "%H:%M" "date2" 10
                         , Run Com  "uname" ["-r"] "kernel" 3600
-                        , Run Com "sh" ["-c", "checkupdates | wc -l"] "updates" 3600
+                        , Run Com "sh" ["-c", "checkupdates | wc -l"] "updates" 10
                         , Run Volume "default" "Master" [] 5
                         , Run UnsafeStdinReader
 ]
