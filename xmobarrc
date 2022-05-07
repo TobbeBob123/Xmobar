@@ -10,26 +10,27 @@ Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=tru
         , commands = [ Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "#ff5555"
-                             , "--normal"   , "#ff5555"
-                             , "--high"     , "#ff5555"
+                             , "--low"      , "#f1fa8c"
+                             , "--normal"   , "#f1fa8c"
+                             , "--high"     , "#f1fa8c"
 
                              , "--" -- battery specific options
                                        -- discharging status
                                        , "-o"	, "<timeleft>"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#ff5555>Charging</fc>"
+                                       , "-O"	, "<fc=#f1fa8c>Charging</fc>"
                                        -- charged status
-                                       , "-i"	, "<fc=#ff5555>Charged</fc>"
+                                       , "-i"	, "<fc=#f1fa8c>Charged</fc>"
                              ] 50
                         , Run Cpu ["-L","3","-H","50","--normal","#ffb86c","--high","#ffb86c"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Date "%a %b %d %Y" "date1" 10
                         , Run Date "%H:%M" "date2" 10
                         , Run Com  "uname" ["-r"] "kernel" 3600
+                        , Run Com "sh" ["-c", "checkupdates | wc -l"] "updates" 3600
                         , Run Volume "default" "Master" [] 5
                         , Run UnsafeStdinReader
 ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template =  " %UnsafeStdinReader% | }{ | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff76c6>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ff5555>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`pavucontrol`>%default:Master% </action></fc></box>| <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |  "}
+        , template =  " %UnsafeStdinReader% | }{ <box type=Buttom width=0 mb=0 color=#282a36><fc=#50fa7b>%updates%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff76c6>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f1fa8c>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`pavucontrol`>%default:Master% </action></fc></box>| <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |  "}
