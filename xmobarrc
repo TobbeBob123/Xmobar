@@ -7,21 +7,20 @@ Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=tru
 	, allDesktops = True
         , persistent = True
         , iconRoot = ".config/xmobar/"  -- default: "."
-        , commands = [    Run Wireless "wlp5s0" ["-t","<essid>"] 1
-			, Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
+        , commands = [ Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "#ff76c6"
-                             , "--normal"   , "#ff79c6"
-                             , "--high"     , "#ff79c6"
+                             , "--low"      , "#ff5555"
+                             , "--normal"   , "#ff5555"
+                             , "--high"     , "#ff5555"
 
                              , "--" -- battery specific options
                                        -- discharging status
                                        , "-o"	, "<timeleft>"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#ff76c6>Charging</fc>"
+                                       , "-O"	, "<fc=#ff5555>Charging</fc>"
                                        -- charged status
-                                       , "-i"	, "<fc=#ff76c6>Charged</fc>"
+                                       , "-i"	, "<fc=#ff5555>Charged</fc>"
                              ] 50
                         , Run Cpu ["-L","3","-H","50","--normal","#ffb86c","--high","#ffb86c"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
@@ -30,8 +29,7 @@ Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=tru
                         , Run Com  "uname" ["-r"] "kernel" 3600
                         , Run Volume "default" "Master" [] 5
                         , Run UnsafeStdinReader
-                        , Run Brightness [ "-t", "L: <percent>%", "--", "-D", "intel_backlight" ] 10
 ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template =  " %UnsafeStdinReader% | }{ | <box type=Buttom width=0 mb=0 color=#282a36><fc=#f1fa8c>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%cpu%</action></fc></box> | <box  type=Bottom width=0 mb=0 color=#282a36><fc=#ff5555><action=`nm-connection-editor`>W: %wlp5s0wi%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#6272a4>%bright%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ff79c6>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`pavucontrol`>%default:Master% </action></fc></box>| <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |  "}
+        , template =  " %UnsafeStdinReader% | }{ | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff76c6>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ff5555>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`pavucontrol`>%default:Master% </action></fc></box>| <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |  "}
