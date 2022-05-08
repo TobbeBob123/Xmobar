@@ -1,13 +1,16 @@
-Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=true:"
+-- Her starter hele konfigurasjonen
+Config {
+        -- Font 
+        font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=true:"
+        -- Bakgrunn
         , bgColor = "#282a36"
+        -- Fargen på alt på Xmobar som ikke har noe satt farge.
         , fgColor ="#44475a"
+        -- Posisonen og bredden på xmobar
         , position = TopSize L 98 26
-        , lowerOnStart = True
-        , hideOnStart = False 
-	, allDesktops = True
-        , persistent = True
-        , iconRoot = ".config/xmobar/"  -- default: "."
-        , commands = [ Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
+        --- Her defineres alle Widget --- 
+        , commands = [ -- Viser batteri prosent
+                        Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
                              , "--low"      , "#f1fa8c"
@@ -22,15 +25,32 @@ Config { font = "xft:Source Code Pro:pixelsize=8:bold:antialias=true:hinting=tru
                                        -- charged status
                                        , "-i"	, "<fc=#f1fa8c>Charged</fc>"
                              ] 50
+                        -- Viser Cpu
                         , Run Cpu ["-L","3","-H","50","--normal","#ffb86c","--high","#ffb86c"] 10
+                        -- Viser Memory i prosent
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        -- Viser Dato
                         , Run Date "%a %b %d %Y" "date1" 10
+                        -- Viser klokkeslett
                         , Run Date "%H:%M" "date2" 10
+                        -- Viser kernel som er i bruk
                         , Run Com  "uname" ["-r"] "kernel" 3600
+                        -- Viser tilgjenglig oppdateringer (Bare pacman. Ikke AUR)
                         , Run Com "sh" ["-c", "checkupdates | wc -l"] "updates" 10
+                        -- Volum level
                         , Run Volume "default" "Master" [] 5
+                        -- Workspaces og eller Layout, dette settes i Xmonad.hs
                         , Run UnsafeStdinReader
 ]
+        -- Setter tegn for å aktivere Widget
         , sepChar = "%"
+        -- Setter tegn som Skiller Workspace og Widget
         , alignSep = "}{"
+--- Her Sorteres Workspace og Wigdet. Her defineres og Widget farger ---
+-- Box = Boks rundt Widget
+-- Type = Definerer hvor boks linja skal være
+-- Width = Bredde på boks
+-- color = Farge på Boks linja
+-- fc = Farge på Widget teksten
+-- action = definerer hva som skal åpne når du trykker på Widget
         , template =  " %UnsafeStdinReader% | }{ <box type=Buttom width=0 mb=0 color=#282a36><fc=#50fa7b>%updates%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff76c6>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f1fa8c>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#bd93f9><action=`pavucontrol`>%default:Master% </action></fc></box>| <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |  "}
