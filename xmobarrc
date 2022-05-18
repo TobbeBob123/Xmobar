@@ -7,6 +7,7 @@ Config {
         , bgColor = "#282a36"
         -- Fargen på alt på Xmobar som ikke har noe satt farge.
         , fgColor ="#44475a"
+	-- Her setter jeg en vei (path) som viser Xmobar hvor Xmobar skal finne bilder eller ikoner. (Ikoner må være xpm fil.).
 	, iconRoot = ".config/xmobar/icon"  -- default: "."
         -- Posisonen og bredden på xmobar
         , position = TopSize L 98 26
