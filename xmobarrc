@@ -10,7 +10,7 @@ Config {
 	-- Her setter jeg en vei (path) som viser Xmobar hvor Xmobar skal finne bilder eller ikoner. (Ikoner må være xpm fil.).
 	, iconRoot = ".config/xmobar/icon"  -- default: "."
         -- Posisonen og bredden på xmobar
-        , position = TopSize L 97 26
+        , position = TopSize L 96 26
         --- Her defineres alle Widget --- 
         , commands = [ -- Viser batteri prosent
                         Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
