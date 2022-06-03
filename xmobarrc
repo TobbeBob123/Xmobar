@@ -10,7 +10,7 @@ Config {
 	-- Her setter jeg en vei (path) som viser Xmobar hvor Xmobar skal finne bilder eller ikoner. (Ikoner må være xpm fil.).
 	, iconRoot = ".config/xmobar/icon"  -- default: "."
         -- Posisonen og bredden på xmobar
-        , position = TopSize L 96 26
+        , position = TopSize L 95 26
         --- Her defineres alle Widget --- 
         , commands = [ -- Viser batteri prosent
                         Run Battery [ "--template" , "Batt: <left>% (<acstatus>)"
@@ -56,4 +56,4 @@ Config {
 -- color = Farge på Boks linja
 -- fc = Farge på Widget teksten
 -- action = definerer hva som skal åpne når du trykker på Widget
-        , template =  " <action=~/.xmonad/keys.sh><icon=logo.xpm/><icon=epic.xpm/></action>| %UnsafeStdinReader% | }{ | <box type=Buttom width=0 mb=0 color=#282a36><fc=#bd93f9>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff5555><action=`~/.config/xmobar/scripts/AntallPakker.sh`>%yay% Programmer</action></fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#50fa7b><action=`~/.config/xmobar/scripts/checkupdate.sh`>%updates% Updates</action></fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff76c6><action=`kitty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f1fa8c>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |   "}
+        , template =  " <action=~/.xmonad/keys.sh><icon=logo.xpm/><icon=epic.xpm/></action>| %UnsafeStdinReader% | }{ | <box type=Buttom width=0 mb=0 color=#282a36><fc=#bd93f9>%kernel%</fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff5555><action=`~/.config/xmobar/scripts/AntallPakker.sh`>%yay% Programmer</action></fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#50fa7b><action=`~/.config/xmobar/scripts/checkupdate.sh`>%updates% Updates</action></fc></box> | <box type=Buttom width=0 mb=0 color=#282a36><fc=#ff76c6><action=`kitty -e htop`>%cpu%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f1fa8c>%battery%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#ffb86c><action=`kitty -e htop`>%memory%</action></fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#8be9fd>D: %date1%</fc></box> | <box type=Bottom width=0 mb=0 color=#282a36><fc=#f8f8f2>KL: %date2%</fc></box> |"}
